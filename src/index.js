@@ -77,7 +77,7 @@ class Wrapper extends React.Component {
           [key]: (...args) => {
             // Pass in controller function args
             // Set empty object as fallback when there is no return value provided by the user
-            const nextState = value(...args) || {};
+            const nextState = value(...args, this.state) || {};
             // Update editor
             injectedUpdate(nextState);
             // Update state
